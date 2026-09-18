@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Note: results/*.png are committed on purpose so the README/FINDINGS figures
+# render on GitHub. Regenerate them with the compare_*.py / sweep.py scripts.
