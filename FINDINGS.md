@@ -7,9 +7,11 @@ Companion to [DESIGN.md](DESIGN.md) (framing) and [README.md](README.md) (how to
 
 We started from a sharp hypothesis: today's intersection rules are a
 **single-point-of-failure** system (one driver's mistake is enough to cause a
-crash), and could perhaps be redesigned so a crash **requires two simultaneous
-mistakes** ("defense in depth"). Seven experiments later, that specific cure
-never materialised — but a better principle did:
+crash), and could perhaps be redesigned so a crash **requires two vehicles to
+each make a mistake** ("defense in depth") — removing any one driver's ability to
+cause a collision alone. Seven experiments later, **we found no rule or guardrail
+that forces that two-vehicle requirement** — that specific cure never
+materialised. But a better principle did:
 
 > **You don't make crashes need two mistakes. You make sure one mistake stays
 > low-energy.** Safety comes from removing *impact energy* and *catastrophic
@@ -26,9 +28,12 @@ governing + setback + interlock combo did *worse* than governing alone.
 
 A crash needs two vehicles in the same place at the same time. A **single-fault**
 crash is one where *one* driver's error was sufficient — a victim simply happened
-to be in the conflict zone when the erring driver arrived. The hypothesis: most
-intersection crashes are single-fault, and the right rules could force crashes to
-require two independent failures instead.
+to be in the conflict zone when the erring driver arrived. The hypothesis, stated
+precisely: most intersection crashes are single-fault, and the right rules or
+guardrails could **force situations where a crash requires two vehicles to each
+make a mistake** — so that any one driver's error, on its own, can no longer
+cause a collision. If most crashes need only one mistake, converting them to need
+two should sharply reduce the crash count.
 
 ## 2. The model (in one paragraph)
 
@@ -118,12 +123,26 @@ zone faster — partly cancelling governing. More measures were not safer here.
    injury-weighted severity — raw crash *count* repeatedly hid the benefit
    (good interventions often *add* minor rear-ends while removing severe crashes).
 
-2. **The two-fault gate never materialised.** No rule change converted single-fault
-   crashes into "needs two mistakes." The interventions either *eliminated* a crash
-   type or *relocated* it; the surviving crashes were, if anything, *more*
-   single-fault (rear-ends). Without in-car technology (AEB / V2X, excluded as not
-   yet ubiquitous), you cannot put a second gate on the erring driver — only on the
-   signal timing, the geometry, or the speed.
+2. **We did not find any rule or guardrail that forces a two-vehicle-mistake
+   requirement.** This was the central goal, and it is the clearest negative
+   result of the project: **none** of the seven interventions changed the
+   underlying logic so that a crash requires *two vehicles to each err*. Instead
+   they *eliminated* a crash type (roundabout, protected-left), *drained energy*
+   (governing), or *relocated* crashes (protected → more rear-ends) — and the
+   fault attribution showed the two-fault share staying flat or *falling*, never
+   rising because we had built a genuine gate. The surviving crashes were, if
+   anything, *more* single-fault (rear-ends).
+
+   The one conceptual near-miss was the **interlock**: to cause a T-bone you would
+   need a driver to run the light *and* the interlock to fail to hold the cross
+   traffic. But that is "a driver's error **plus a sensor/infrastructure
+   failure**," not two *drivers* each making a mistake — and we never modelled
+   interlock failures, so we did not even demonstrate it empirically as a gate; in
+   this driver mix its measured benefit was marginal. The deeper reason a true
+   two-vehicle gate never appeared: without in-car technology (AEB / V2X, excluded
+   as not yet ubiquitous) you cannot place a second check *on the erring driver*,
+   and rear-ends — the dominant residual crash — are intrinsically a single
+   driver's fault with no second vehicle to hold.
 
 3. **Combining helps only when mechanisms are compatible.** Interlock + protected
    stacked (both remove crossing crashes). Governing + setback interfered (setback's
@@ -135,6 +154,18 @@ zone faster — partly cancelling governing. More measures were not safer here.
    traffic to hold. Every measure that adds stopping adds rear-ends. Reducing them
    needs following-distance / auto-braking enforcement (in-car tech), which was out
    of scope.
+
+5. **The benefit, when it came, was a severity downgrade — not fewer crashes.**
+   Most levers did *not* reduce the number of accidents: governing and interlock
+   left the count roughly flat, and the roundabout, protected phasing, and the
+   interlock+protected package actually *increased* it — almost entirely by
+   substituting **single-fault rear-end collisions** for the crossing crashes they
+   removed. Because rear-ends are lower-severity, injury-weighted harm still fell,
+   so this was a genuine safety gain — but it came as a *downgrade of crash type*
+   (violent side-impact → minor rear-end), not as the intended reduction in the
+   *number* of collisions. The lone exception was the **stop-line setback**, which
+   reduced the total count and improved throughput while barely moving severity —
+   the mirror image of every other lever.
 
 ## 6. Practical takeaways
 
